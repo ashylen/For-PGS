@@ -1,23 +1,19 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import './BoxItem.css';
+import styles from './BoxItem.module.scss';
 
-const BoxItem = ({
-    image,
-    heading,
-    description
-}) => (
-  <div className="boxItem__wrapper">
-    <div className="boxItem__inner">
+const BoxItem = ({ image, heading, description }) => (
+  <div className={styles.wrapper}>
+    <div className={styles.inner}>
       <div>
         <div
-          className="boxItem__image"
+          className={styles.image}
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>
-      <div className="boxItem__text-wrapper">
-        <h2 className="boxItem__heading">{heading}</h2>
-        <p className="boxItem__description">{description}</p>
+      <div className={styles.text_wrapper}>
+        <h2 className={styles.heading}>{heading}</h2>
+        <p className={styles.description}>{description}</p>
       </div>
     </div>
   </div>
