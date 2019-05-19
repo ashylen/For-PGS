@@ -1,16 +1,62 @@
-.wrapper {
-  width: 50%;
-  margin: 50px auto 100px;
+$break-small: 650px;
+
+@keyframes loader {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.wrapper{
+   animation: loader .5s ease;
+  background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 
 .form {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+}
+
+.formWrapper {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 60px 30px;
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonWrapper button {
+  width: 100%;
+  padding: 10px 30px;
+  font-weight: 400;
+
+ @media (min-width: $break-small) {
+    width: auto;
+  }
+
+}
+
+.form > div:nth-of-type(2)
+{
+  margin-bottom: 100px;
 }

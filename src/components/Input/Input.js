@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss';
 
-const Input = ({ tag: Tag, name, label }) => (
+const Input = ({ tag: Tag, name, label, required }) => (
   <div className={styles.formItem}>
     <Tag
       className={styles.input}
@@ -10,10 +10,10 @@ const Input = ({ tag: Tag, name, label }) => (
       name={name}
       id={name}
       placeholder=" "
-      required
+      required={required ? 1 : 0}
     />
     <label className={styles.label} htmlFor={name}>
-      {label}
+      {label}{required ? [<sup key={name} className={styles.required}>*</sup>] : ""}
     </label>
     <div className={styles.formItemBar} />
   </div>
@@ -21,7 +21,7 @@ const Input = ({ tag: Tag, name, label }) => (
 
 Input.propTypes = {
     name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
 }
 

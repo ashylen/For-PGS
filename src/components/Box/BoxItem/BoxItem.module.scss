@@ -1,6 +1,19 @@
+$break-small: 650px;
+$break-medium: 1024px;
+
+
 .wrapper {
   padding: 20px;
+
+  @media (min-width: $break-small) {
+    width: calc(100% / 2);
+  }
+
+  @media (min-width: $break-medium) {
+    width: calc(100% / 3);
+  }
 }
+
 .inner {
   border: 1px solid #d1d1d1;
   box-shadow: 0 0 5px -3px black;
@@ -8,13 +21,14 @@
 
 .image {
   width: 100%;
-  padding-bottom: 60%;
+  padding-bottom: 65%;
   background-position: 0 center;
   background-size: cover;
 }
 
 .text_wrapper {
   padding: 20px;
+  background: #fff;
 }
 
 .heading {
@@ -25,16 +39,4 @@
 .description {
   margin: 0.5rem 0;
   line-height: 1.4;
-}
-
-@media (min-width: 700px) {
-  .wrapper {
-    width: calc(100% / 2);
-  }
-}
-
-@media (min-width: 1024px) {
-  .wrapper {
-    width: calc(100% / 3);
-  }
 }
