@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import BoxWrapper from "./components/BoxWrapper/BoxWrapper.js";
+import Box from "./components/Box/Box.js";
 import Contact from "./components/Contact/Contact.js";
 
 class App extends React.Component {
@@ -8,13 +8,11 @@ class App extends React.Component {
     items: []
   }
 
-  
-
 
   render() {
     return (
       <div className="App">
-        <BoxWrapper />
+        <Box />
         <Contact />
       </div>
     );

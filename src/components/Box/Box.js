@@ -1,9 +1,9 @@
 import React from 'react';
 import BoxItem from './BoxItem/BoxItem'
-import styles from './BoxWrapper.module.scss'
+import styles from './Box.module.scss'
 import { boxItems } from '../../data/boxItems';
 
-const BoxWrapper = () => (
+const Box = () => (
   <div className={styles.wrapper}>
     {boxItems.map((item, key) => (
       <BoxItem key={key} {...item} />
@@ -11,4 +11,4 @@ const BoxWrapper = () => (
   </div>
 );
 
-export default BoxWrapper;
+export default Box;
