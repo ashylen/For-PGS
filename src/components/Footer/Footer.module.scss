@@ -6,8 +6,8 @@ $break-medium: 650px;
 
 .text {
   padding: 40px 10px;
-  font-size: 14px;
-  color: #bdbdbd;
+  font-size: 15px;
+  color: #949090;
   font-weight: 400;
   text-align: center;
 }
@@ -22,8 +22,7 @@ $break-medium: 650px;
   opacity: 0.4;
   max-width: 275px;
 
-   @media screen and (min-width: $break-medium) {
-     max-width: 350px;
+  @media screen and (min-width: $break-medium) {
+    max-width: 350px;
   }
 }
-
