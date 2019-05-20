@@ -1,11 +1,12 @@
-import React from 'react';
-import styles from './Notification.module.scss';
+import React from "react";
+import styles from "./Notification.module.scss";
 
-const Notification = () => (
-    <div className={styles.wrapper}>
-        Tutaj bedzie tekst
+const Notification = props => (
+  <>
+    <div id={props.id} className={styles.wrapper}>
+      <div className={styles.content}>{props.text}</div>
     </div>
-
+  </>
 );
 
 export default Notification;

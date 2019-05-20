@@ -8,6 +8,8 @@ class Cam extends React.Component {
   constructor(props) {
     super(props);
 
+    this.urlFetch(API);
+
     this.state = {
       cams: ["Andalo", "Monte Bondone"],
       data: null,
@@ -50,7 +52,6 @@ class Cam extends React.Component {
       mm = "0" + mm;
     }
     today = mm + "-" + dd + "-" + yyyy;
-    console.log(today);
     return today;
   };
 
@@ -60,14 +61,12 @@ class Cam extends React.Component {
     const camsFromData = this.state.data;
     let content;
 
-    this.urlFetch(API);
 
 
     if (isApiConnected && camsFromData) {
       let keys = Object.keys(camsFromData);
       let cams = [];
 
-      console.log(camsFromData);
       for (var i = 0; i < keys.length; i++) {
         let key = keys[i];
 
@@ -106,7 +105,6 @@ class Cam extends React.Component {
           });
         }
       }
-      console.log(cams);
 
       content = cams.map((cam, key) => (
         <CamItem key={key} heading={cam.name} images={cam.images} date={this.getCurrentDate()}/>
