@@ -1,0 +1,15 @@
+.wrapper {
+  position: relative;
+  background: #fff;
+}
+
+.wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: 1px;
+  background: #d1d1d1;
+}

@@ -1,0 +1,29 @@
+$break-medium: 650px;
+
+.wrapper {
+  background: #282828;
+}
+
+.text {
+  padding: 40px 10px;
+  font-size: 14px;
+  color: #bdbdbd;
+  font-weight: 400;
+  text-align: center;
+}
+
+.text:before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #fff;
+  padding: 0 20px;
+  margin: 0 auto 20px;
+  opacity: 0.4;
+  max-width: 275px;
+
+   @media screen and (min-width: $break-medium) {
+     max-width: 350px;
+  }
+}
+
