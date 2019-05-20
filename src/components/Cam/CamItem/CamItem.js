@@ -17,8 +17,8 @@ const CamItem = props => (
 );
 
 CamItem.propTypes = {
-  heading: PropTypes.string,
-  date: PropTypes.string
+  heading: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
 };
 
 CamItem.defaultProps = {

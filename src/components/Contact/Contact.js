@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
+
+
 import styles from "./Contact.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -98,7 +100,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <div className={styles.wrapper}>
           <div className={styles.formWrapper}>
             <Notification
@@ -140,7 +142,7 @@ class Contact extends React.Component {
             </form>
           </div>
         </div>
-      </>
+      </Fragment>
     );
   }
 }

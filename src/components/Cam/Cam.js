@@ -27,27 +27,31 @@ class Cam extends React.Component {
   }
 
   urlFetch = data => {
-    fetch(data, {
-      headers: new Headers({
-        "X-Mashape-Key": "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw",
-        "Content-Type": "application/json"
+    try {
+      fetch(data, {
+        headers: new Headers({
+          "X-Mashape-Key": "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw",
+          "Content-Type": "application/json"
+        })
       })
-    })
-      .then(response => {
-        if (response.statusText === "OK") {
-          if (this._isMounted) {
-            this.setState({ isApiConnected: true });
+        .then(response => {
+          if (response.statusText === "OK") {
+            if (this._isMounted) {
+              this.setState({ isApiConnected: true });
+            }
+            return response.json();
+          } else {
+            throw new Error("Error with API connection.");
           }
-          return response.json();
-        } else {
-          throw new Error("Error with API connection.");
-        }
-      })
-      .then(data => {
-        if (this._isMounted) {
-          this.setState({ data });
-        }
-      });
+        })
+        .then(data => {
+          if (this._isMounted) {
+            this.setState({ data });
+          }
+        });
+    } catch (error) {
+      console.error("error: ", error);
+    }
   };
 
   getCurrentDate = () => {
@@ -118,7 +122,7 @@ class Cam extends React.Component {
 
       content = cams.map((cam, key) => (
         <CamItem
-          key={key}
+          key={cam.name}
           heading={cam.name}
           images={cam.images}
           date={this.getCurrentDate()}
