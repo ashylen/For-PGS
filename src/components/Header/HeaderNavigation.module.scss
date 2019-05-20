@@ -26,13 +26,13 @@ $break-small: 650px;
   padding: 0;
   min-width: auto;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   z-index: 1;
 
   &Link {
     display: block;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid transparent;
     padding: 12px 0;
     margin: 0 10px;
