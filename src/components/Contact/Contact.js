@@ -6,7 +6,6 @@ import Notification from "../Notification/Notification";
 
 import styles from "./Contact.module.scss";
 
-
 class Contact extends React.Component {
   constructor(props) {
     super(props);
