@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BoxItem from './BoxItem/BoxItem'
+
 import styles from './Box.module.scss'
 import { boxItems } from '../../data/boxItems';
 

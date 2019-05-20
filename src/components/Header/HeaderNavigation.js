@@ -1,8 +1,11 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
+
+import Logo from "../Logo/Logo";
+
 import styles from "./HeaderNavigation.module.scss";
-import Logo from "../Logo/Logo"
+
 
 const HeaderNavigation = () => (
   <nav>

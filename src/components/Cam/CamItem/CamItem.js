@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
+
 import PropTypes from "prop-types";
 import styles from "./CamItem.module.scss";
 
 const CamItem = props => (
-  <>
+  <Fragment>
     <div className={styles.wrapper}>
       <div className={styles.item}>
         <div className={styles.itemDate}>{props.date}</div>
@@ -13,7 +14,7 @@ const CamItem = props => (
         </div>
       </div>
     </div>
-  </>
+  </Fragment>
 );
 
 CamItem.propTypes = {

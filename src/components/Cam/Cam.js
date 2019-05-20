@@ -1,11 +1,15 @@
-import React from "react";
-import styles from "./Cam.module.scss";
+import React, {Fragment} from "react";
+
 import CamItem from "./CamItem/CamItem";
+
+import styles from "./Cam.module.scss";
+
 
 const API = "https://makevoid-skicams.p.mashape.com/cams.json";
 
 class Cam extends React.Component {
   _isMounted = false;
+
 
   constructor(props) {
     super(props);
@@ -133,13 +137,13 @@ class Cam extends React.Component {
     }
 
     return (
-      <>
+      <Fragment>
         <div className={styles.wrapper}>
           <div className={styles.inner}>
             <div className={styles.items}>{content}</div>
           </div>
         </div>
-      </>
+      </Fragment>
     );
   }
 }

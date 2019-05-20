@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
 
-
-import styles from "./Contact.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Notification from "../Notification/Notification";
 
+import styles from "./Contact.module.scss";
+
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
+
+    this.notificationRef = React.createRef(); //Element that shows up when form is submited correctly
 
     this.state = {
       fields: {
@@ -28,20 +31,21 @@ class Contact extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+
   handleFormSubmit = e => {
     e.preventDefault();
     this.setState({ isFormSubmitClicked: true });
 
     if (this.validateForm()) {
       //Animations for Notification
-      const notification = document.getElementById("submitNotification");
+      const notification = this.notificationRef.current;
       notification.style.zIndex = "2";
       notification.style.opacity = "1";
 
-      setTimeout(() => {
+      setTimeout(() => { //Fade out animation
         this.handleClearForm(); //Clear form in background
         notification.style.opacity = "0";
-        setTimeout(() => {
+        setTimeout(() => { //Make inputs clickable again after fade out
           notification.style.zIndex = "-1";
         }, 600);
       }, 1800);
@@ -60,7 +64,9 @@ class Contact extends React.Component {
     let fields = this.state.fields;
     fields[e.target.name] = e.target.value;
 
-    if (this.state.isFormSubmitClicked) this.validateForm();
+    if (this.state.isFormSubmitClicked) {
+      this.validateForm();
+    }
 
     this.setState({
       fields
@@ -104,7 +110,7 @@ class Contact extends React.Component {
         <div className={styles.wrapper}>
           <div className={styles.formWrapper}>
             <Notification
-              id="submitNotification"
+              ref={this.notificationRef}
               text="Message has been sent."
             />
             <form

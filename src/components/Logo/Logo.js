@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Logo = () => {
   return (
-    <>
+    <Fragment>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
@@ -58,7 +58,7 @@ const Logo = () => {
           height="25.9"
         />
       </svg>
-    </>
+    </Fragment>
   );
 };
 
