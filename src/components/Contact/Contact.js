@@ -31,13 +31,13 @@ class Contact extends React.Component {
     this.setState({ isFormSubmitClicked: true });
 
     if (this.validateForm()) {
-      this.handleClearForm();
-
       //Animations for Notification
       const notification = document.getElementById("submitNotification");
       notification.style.zIndex = "2";
       notification.style.opacity = "1";
+
       setTimeout(() => {
+        this.handleClearForm(); //Clear form in background
         notification.style.opacity = "0";
         setTimeout(() => {
           notification.style.zIndex = "-1";
