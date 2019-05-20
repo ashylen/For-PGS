@@ -5,17 +5,25 @@ import CamItem from "./CamItem/CamItem";
 const API = "https://makevoid-skicams.p.mashape.com/cams.json";
 
 class Cam extends React.Component {
+  _isMounted = false;
+
   constructor(props) {
     super(props);
-
-    this.urlFetch(API);
 
     this.state = {
       cams: ["Andalo", "Monte Bondone"],
       data: null,
-      isApiConnected: false,
-
+      isApiConnected: false
     };
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+    this.urlFetch(API);
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   urlFetch = data => {
@@ -27,14 +35,18 @@ class Cam extends React.Component {
     })
       .then(response => {
         if (response.statusText === "OK") {
-          this.setState({ isApiConnected: true });
+          if (this._isMounted) {
+            this.setState({ isApiConnected: true });
+          }
           return response.json();
         } else {
           throw new Error("Error with API connection.");
         }
       })
       .then(data => {
-        this.setState({ data });
+        if (this._isMounted) {
+          this.setState({ data });
+        }
       });
   };
 
@@ -60,8 +72,6 @@ class Cam extends React.Component {
     const camsToShow = this.state.cams;
     const camsFromData = this.state.data;
     let content;
-
-
 
     if (isApiConnected && camsFromData) {
       let keys = Object.keys(camsFromData);
@@ -107,7 +117,12 @@ class Cam extends React.Component {
       }
 
       content = cams.map((cam, key) => (
-        <CamItem key={key} heading={cam.name} images={cam.images} date={this.getCurrentDate()}/>
+        <CamItem
+          key={key}
+          heading={cam.name}
+          images={cam.images}
+          date={this.getCurrentDate()}
+        />
       ));
     } else {
       content = <div className={styles.loaderIcon} />;
