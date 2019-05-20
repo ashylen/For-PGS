@@ -114,7 +114,7 @@ class Contact extends React.Component {
                 name="name"
                 label="Name"
                 value={this.state.fields.name}
-                required={false}
+                required={true}
                 onChangeFn={this.handleInputChange}
                 errorMsg={this.state.errors.name}
               />
@@ -122,7 +122,7 @@ class Contact extends React.Component {
                 name="email"
                 label="Email"
                 value={this.state.fields.email}
-                required={false}
+                required={true}
                 onChangeFn={this.handleInputChange}
                 errorMsg={this.state.errors.email}
               />
@@ -132,6 +132,7 @@ class Contact extends React.Component {
                 required={false}
                 value={this.state.fields.message}
                 onChangeFn={this.handleInputChange}
+                errorMsg={this.state.errors.message}
               />
               <div className={styles.buttonWrapper}>
                 <Button>Send</Button>
