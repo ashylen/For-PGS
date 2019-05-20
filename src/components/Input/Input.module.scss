@@ -1,59 +1,93 @@
+$invalid: red;
+$brandColor: #ff7626;
+$initialColor: #7d7d7d7c;
 
 .formItem {
   width: 100%;
   margin: 0 0 45px;
   position: relative;
   flex-shrink: 0;
-}
-
-.formItemBar {
-  width: 100%;
-  height: 1px;
-  background: #7d7d7d7c;
-  transition: 0.1s all;
-}
-
-.label {
-  color: #7d7d7d7c;
-  position: absolute;
-  top: 2px;
-  left: 0;
-  transition: 0.2s ease-out all;
   font-size: 14px;
-  font-weight: 500;
+
+  &Bar {
+    width: 100%;
+    height: 1px;
+    background: #7d7d7d7c;
+    transition: 0.1s all;
+  }
+
+  &Input {
+    color: #7d7d7d;
+    font-size: 16px;
+    border: none;
+    line-height: 22px;
+    width: 100%;
+    background: none;
+  }
+
+  &Input:focus {
+    outline: none;
+  }
+
+  &Input:focus + &Label {
+    top: -16px;
+    font-size: 13px;
+    color: $brandColor;
+  }
+
+  &Input:not(:placeholder-shown) + &Label {
+    top: -16px;
+    font-size: 13px;
+    color: $brandColor;
+  }
+
+  &Input:focus ~ &Bar {
+    background: $brandColor;
+  }
+
+  &Label {
+    color: #7d7d7d7c;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    transition: 0.2s ease-out all;
+    font-weight: 500;
+  }
+
+  &Invalid {
+    color: $invalid;
+  }
+
+  &Invalid &Bar{
+    background: $invalid !important;
+  }
+
+  &Invalid &Label {
+    color: $invalid !important;
+  }
+
 }
 
-.input{
-  color: #7d7d7d;
-  font-size: 16px;
-  border: none;
-  line-height: 22px;
-  width: 100%;
-  background: none;
-}
-
-.input:focus{
-  outline: none;
-}
-
-.input:focus + .label,
-.textarea:focus + .label {
-  top: -16px;
-  font-size: 13px;
-  color: #ff7626;
-}
-
-.input:not(:placeholder-shown) + .label{
-  top: -16px;
-  font-size: 13px;
-  color: #ff7626;
-}
-
-.input:focus ~ .formItemBar{
-  background: #ff7626;
-}
-
-.required{
-  color: red;
+.required {
+  color: $invalid;
   padding: 0 3px;
+}
+
+.errorMsg {
+  color: $invalid;
+  padding: 5px 0;
+  position: absolute;
+  bottom: auto;
+  font-size: 12px;
+  animation: loader 0.5s ease;
+}
+
+@keyframes loader {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
