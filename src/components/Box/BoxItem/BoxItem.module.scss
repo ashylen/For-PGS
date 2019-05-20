@@ -2,7 +2,6 @@ $break-small: 650px;
 $break-medium: 1024px;
 $brandColor: #ff7626;
 
-
 .wrapper {
   padding: 20px;
 
@@ -20,11 +19,10 @@ $brandColor: #ff7626;
   box-shadow: 0 0 5px -3px black;
   transition: box-shadow 0.3s;
 
-  &:hover{
-    box-shadow: 0 10px 25px -14px black;
+  &:hover {
+    box-shadow: 0 10px 20px -9px #868686;
   }
 }
-
 
 .image {
   width: 100%;
