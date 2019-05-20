@@ -17,7 +17,13 @@ $break-medium: 1024px;
 .inner {
   border: 1px solid #d1d1d1;
   box-shadow: 0 0 5px -3px black;
+  transition: box-shadow 0.3s;
+
+  &:hover{
+    box-shadow: 0 0 14px -7px black;
+  }
 }
+
 
 .image {
   width: 100%;
