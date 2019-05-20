@@ -32,7 +32,7 @@ class Contact extends React.Component {
 
     if (this.validateForm()) {
       this.handleClearForm();
-      alert("Form submitted");
+      alert("Message has been sent.");
     }
   };
 

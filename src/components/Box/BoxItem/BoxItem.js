@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import styles from './BoxItem.module.scss';
 
+
+
 const BoxItem = ({ image, heading, description }) => (
   <div className={styles.wrapper}>
     <div className={styles.inner}>

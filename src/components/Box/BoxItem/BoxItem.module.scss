@@ -1,5 +1,6 @@
 $break-small: 650px;
 $break-medium: 1024px;
+$brandColor: #ff7626;
 
 
 .wrapper {
@@ -20,7 +21,7 @@ $break-medium: 1024px;
   transition: box-shadow 0.3s;
 
   &:hover{
-    box-shadow: 0 0 14px -7px black;
+    box-shadow: 0 10px 25px -14px black;
   }
 }
 
