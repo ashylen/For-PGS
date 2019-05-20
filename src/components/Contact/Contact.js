@@ -12,12 +12,12 @@ class Contact extends React.Component {
       fields: {
         name: "",
         email: "",
-        messsage: ""
+        message: ""
       },
       errors: {
         name: "",
         email: "",
-        messsage: ""
+        message: ""
       },
       isFormSubmitClicked: false
     };
@@ -129,6 +129,7 @@ class Contact extends React.Component {
               <Input
                 name="message"
                 label="Message"
+                required={false}
                 value={this.state.fields.message}
                 onChangeFn={this.handleInputChange}
               />
