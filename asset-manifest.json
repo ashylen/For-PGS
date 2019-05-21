@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/For-PGS/static/css/main.2e33291f.chunk.css",
+    "main.js": "/For-PGS/static/js/main.502d3be2.chunk.js",
+    "main.js.map": "/For-PGS/static/js/main.502d3be2.chunk.js.map",
+    "runtime~main.js": "/For-PGS/static/js/runtime~main.fb1b1eb2.js",
+    "runtime~main.js.map": "/For-PGS/static/js/runtime~main.fb1b1eb2.js.map",
+    "static/js/2.668bda43.chunk.js": "/For-PGS/static/js/2.668bda43.chunk.js",
+    "static/js/2.668bda43.chunk.js.map": "/For-PGS/static/js/2.668bda43.chunk.js.map",
+    "index.html": "/For-PGS/index.html",
+    "precache-manifest.58f32542e77e6524225ec8c595fce47e.js": "/For-PGS/precache-manifest.58f32542e77e6524225ec8c595fce47e.js",
+    "service-worker.js": "/For-PGS/service-worker.js",
+    "static/css/main.2e33291f.chunk.css.map": "/For-PGS/static/css/main.2e33291f.chunk.css.map",
+    "static/media/box1.png": "/For-PGS/static/media/box1.404a1829.png",
+    "static/media/box2.png": "/For-PGS/static/media/box2.1b89ef73.png",
+    "static/media/box3.png": "/For-PGS/static/media/box3.21216114.png"
+  }
+}
