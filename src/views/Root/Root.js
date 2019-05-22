@@ -36,6 +36,7 @@ class Root extends React.Component {
               component={ContactView}
               title="Contact - PGS Software"
             />
+            <Route component={AboutUsView} />
           </Switch>
           <Footer />
         </AppContext.Provider>
