@@ -1,6 +1,7 @@
 {
   "name": "for-pgs",
   "version": "0.1.0",
+  "homepage": "https://ashylen.github.io/",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
