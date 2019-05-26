@@ -18,11 +18,11 @@ body {
   color: #757575;
 }
 
-header, main, footer {
-    flex-shrink: 0;
+header,
+main,
+footer {
+  flex-shrink: 0;
 }
-
-
 
 #root {
   min-height: 100vh;

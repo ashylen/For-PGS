@@ -1,6 +1,6 @@
-$invalid: red;
+$invalid: #dc3545;
 $brandColor: #ff7626;
-$initialColor: #7d7d7d7c;
+$initialColor: #7d7d7d;
 
 .formItem {
   width: 100%;
@@ -12,12 +12,13 @@ $initialColor: #7d7d7d7c;
   &Bar {
     width: 100%;
     height: 1px;
-    background: #7d7d7d7c;
+    background: $initialColor;
+    opacity: 0.4;
     transition: 0.1s all;
   }
 
   &Input {
-    color: #7d7d7d;
+    color: $initialColor;
     font-size: 16px;
     border: none;
     line-height: 22px;
@@ -29,43 +30,47 @@ $initialColor: #7d7d7d7c;
     outline: none;
   }
 
+  &Label {
+    color: $initialColor;
+    position: absolute;
+    top: 2px;
+    opacity: 0.6;
+    left: 0;
+    transition: 0.2s ease-out all;
+    font-weight: 500;
+  }
+
   &Input:focus + &Label {
     top: -16px;
     font-size: 13px;
     color: $brandColor;
+    opacity: 1;
   }
 
   &Input:not(:placeholder-shown) + &Label {
     top: -16px;
     font-size: 13px;
     color: $brandColor;
+    opacity: 1;
   }
 
   &Input:focus ~ &Bar {
     background: $brandColor;
-  }
-
-  &Label {
-    color: #7d7d7d7c;
-    position: absolute;
-    top: 2px;
-    left: 0;
-    transition: 0.2s ease-out all;
-    font-weight: 500;
+    opacity: 1;
   }
 
   &Invalid {
     color: $invalid;
   }
 
-  &Invalid &Bar{
+  &Invalid &Bar {
     background: $invalid !important;
   }
 
   &Invalid &Label {
     color: $invalid !important;
+    opacity: 1;
   }
-
 }
 
 .required {

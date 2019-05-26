@@ -6,6 +6,7 @@ import styles from "./Cam.module.scss";
 
 
 const API = "https://makevoid-skicams.p.mashape.com/cams.json";
+const HeaderKey = "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw";
 
 class Cam extends React.Component {
   _isMounted = false;
@@ -34,7 +35,7 @@ class Cam extends React.Component {
     try {
       fetch(data, {
         headers: new Headers({
-          "X-Mashape-Key": "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw",
+          "X-Mashape-Key": HeaderKey,
           "Content-Type": "application/json"
         })
       })

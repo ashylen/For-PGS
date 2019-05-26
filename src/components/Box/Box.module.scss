@@ -8,22 +8,33 @@
   }
 }
 
-.wrapper{
-   animation: loader .5s ease;
-  background-color: #F0F0F0;
+@keyframes slideIn {
+  0% {
+    transform: translateY(-3%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.wrapper {
+  animation: loader 0.5s ease;
+  background-color: #f0f0f0;
   flex-grow: 1;
 }
 
-.container{
+.container {
   max-width: 1100px;
   width: 90vw;
   margin: 0 auto;
 }
 
 .inner {
+  animation: slideIn 0.5s ease;
+
   display: flex;
   flex-wrap: wrap;
   margin: 0 -20px;
   justify-content: space-between;
 }
-

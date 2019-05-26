@@ -1,14 +1,19 @@
 import React from "react";
 
-import PropTypes from 'prop-types';
-import styles from './BoxItem.module.scss';
+import Button from "../../Button/Button";
+
+import PropTypes from "prop-types";
+import styles from "./BoxItem.module.scss";
 
 const BoxItem = ({ image, heading, description }) => (
   <div className={styles.wrapper}>
     <div className={styles.inner}>
-      <div>
+      <div className={styles.innerImageWrapper}>
+        <div className={styles.innerImageWrapperHover}>
+          <Button>See more</Button>
+        </div>
         <div
-          className={styles.image}
+          className={styles.innerImageWrapperImage}
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>
@@ -27,6 +32,6 @@ BoxItem.propTypes = {
 };
 
 BoxItem.defaultProps = {
-    description: 'Default description - Lorem ipsum ...'
+  description: "Default description - Lorem ipsum ..."
 };
 export default BoxItem;

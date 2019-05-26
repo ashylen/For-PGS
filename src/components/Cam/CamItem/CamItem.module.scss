@@ -12,6 +12,7 @@ $brandColor: #ff7626;
   }
 }
 
+
 .wrapper {
   animation: loader 0.5s ease;
 
@@ -23,6 +24,7 @@ $brandColor: #ff7626;
 }
 
 .item {
+
   background: #fff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -51,5 +53,6 @@ $brandColor: #ff7626;
   }
   &Image img {
     width: 100%;
+    height: 100%;
   }
 }

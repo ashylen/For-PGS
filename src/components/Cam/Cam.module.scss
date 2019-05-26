@@ -12,7 +12,7 @@ $break-medium: 1024px;
 }
 
 .wrapper {
-  animation: loader 0.5s ease;
+  animation: loader 1s ease;
   background-color: #f0f0f0;
   flex-grow: 1;
   position: relative;
@@ -42,8 +42,8 @@ $break-medium: 1024px;
   top: 0;
   bottom: 0;
   margin: auto;
-
 }
+
 .loaderIcon:after {
   content: " ";
   display: block;

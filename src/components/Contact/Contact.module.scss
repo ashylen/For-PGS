@@ -10,6 +10,16 @@ $break-small: 650px;
   }
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
 .wrapper {
   animation: loader 0.5s ease;
   background-color: #f0f0f0;
@@ -29,6 +39,8 @@ $break-small: 650px;
 }
 
 .formWrapper {
+  animation: slideIn 0.5s ease;
+
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.03);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
@@ -38,7 +50,6 @@ $break-small: 650px;
   width: 90%;
   max-width: 500px;
   position: relative;
-
 }
 
 .buttonWrapper {

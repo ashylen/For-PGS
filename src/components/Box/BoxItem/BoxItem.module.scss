@@ -1,6 +1,7 @@
 $break-small: 650px;
 $break-medium: 1024px;
-$brandColor: #ff7626;
+$brandColor: rgba(255, 118, 38, 1);
+$brandColorTransparent: rgba(255, 118, 38, 0.95);
 
 .wrapper {
   padding: 20px;
@@ -19,16 +20,63 @@ $brandColor: #ff7626;
   box-shadow: 0 0 5px -3px black;
   transition: box-shadow 0.3s;
 
+  &ImageWrapper {
+    position: relative;
+
+    &Image {
+      width: 100%;
+      padding-bottom: 65%;
+      background-position: 0 center;
+      background-size: cover;
+    }
+
+    &Hover {
+      display: none;
+    }
+
+    @media (min-width: $break-medium) {
+      &Hover {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: transparent;
+        opacity: 0;
+        height:0;
+        transition: height 0.5s, opacity 0.3s, background-color 0.7s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & button {
+          background-color: transparent;
+          border: 2px solid #fff;
+          outline: none;
+
+          &:active {
+            background-color: #fff;
+            color: $brandColor;
+          }
+        }
+      }
+    }
+  }
+
   &:hover {
     box-shadow: 0 10px 20px -9px #868686;
-  }
-}
+    cursor: pointer;
 
-.image {
-  width: 100%;
-  padding-bottom: 65%;
-  background-position: 0 center;
-  background-size: cover;
+    .innerImageWrapper {
+      &Hover {
+        opacity: 1;
+        background: $brandColorTransparent;
+        height:100%;
+      }
+    }
+  }
 }
 
 .text_wrapper {
