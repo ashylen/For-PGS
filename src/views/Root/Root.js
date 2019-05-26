@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import AppContext from "../../context";
 
@@ -20,28 +20,27 @@ class Root extends React.Component {
         <AppContext.Provider>
           <Header />
           <Switch>
+            <Route exact path="/" component={AboutUsView} />
             <Route
               exact
-              path="/"
+              path="/about-us"
               component={AboutUsView}
               title="About Us - PGS Software"
             />
             <Route
+              exact
               path="/skicams"
               component={SkicamsView}
               title="Skicams - PGS Software"
             />
             <Route
+              exact
               path="/contact"
               component={ContactView}
               title="Contact - PGS Software"
             />
-            <Route
-              path="/For-PGS"
-              component={AboutUsView}
-              title="About Us - PGS Software"
-            />
-            <Route component={AboutUsView} />
+
+            <Route component={() => <Redirect to="/about-us" />} />
           </Switch>
           <Footer />
         </AppContext.Provider>
