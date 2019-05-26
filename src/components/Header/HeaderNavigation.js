@@ -11,10 +11,7 @@ const HeaderNavigation = () => (
   <nav>
     <div className={styles.navWrapper}>
       <div className={styles.logoWrapper}>
-        <NavLink
-          exact
-          to="/"
-        >
+        <NavLink exact to="/about-us">
           <Logo />
         </NavLink>
       </div>
@@ -24,7 +21,7 @@ const HeaderNavigation = () => (
             exact
             activeClassName={styles.navItemLinkActive}
             className={styles.navItemLink}
-            to="/"
+            to="/about-us"
           >
             About Us
           </NavLink>
