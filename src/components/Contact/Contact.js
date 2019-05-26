@@ -120,6 +120,7 @@ class Contact extends React.Component {
               <Input
                 name="name"
                 label="Name"
+                type="text"
                 value={this.state.fields.name}
                 required={true}
                 onChangeFn={this.handleInputChange}
@@ -128,6 +129,7 @@ class Contact extends React.Component {
               <Input
                 name="email"
                 label="Email"
+                type="email"
                 value={this.state.fields.email}
                 required={true}
                 onChangeFn={this.handleInputChange}
@@ -136,6 +138,7 @@ class Contact extends React.Component {
               <Input
                 name="message"
                 label="Message"
+                type="text"
                 required={false}
                 value={this.state.fields.message}
                 onChangeFn={this.handleInputChange}

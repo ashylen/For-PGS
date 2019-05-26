@@ -7,6 +7,7 @@ import classNames from "classnames";
 const Input = ({
   tag: Tag,
   name,
+  type,
   label,
   value,
   required,
@@ -21,7 +22,7 @@ const Input = ({
   >
     <Tag
       className={styles.formItemInput}
-      type="text"
+      type={type}
       name={name}
       id={name}
       placeholder=" "
