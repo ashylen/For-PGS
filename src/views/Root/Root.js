@@ -20,7 +20,6 @@ class Root extends React.Component {
         <AppContext.Provider>
           <Header />
           <Switch>
-            <Route exact path="/" component={AboutUsView} />
             <Route
               exact
               path="/about-us"
