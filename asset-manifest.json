@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/For-PGS/static/css/main.289f3956.chunk.css",
+    "main.css": "/For-PGS/static/css/main.c189828a.chunk.css",
     "main.js": "/For-PGS/static/js/main.7dd49fae.chunk.js",
     "main.js.map": "/For-PGS/static/js/main.7dd49fae.chunk.js.map",
     "runtime~main.js": "/For-PGS/static/js/runtime~main.fb1b1eb2.js",
@@ -8,9 +8,9 @@
     "static/js/2.bf1d98e3.chunk.js": "/For-PGS/static/js/2.bf1d98e3.chunk.js",
     "static/js/2.bf1d98e3.chunk.js.map": "/For-PGS/static/js/2.bf1d98e3.chunk.js.map",
     "index.html": "/For-PGS/index.html",
-    "precache-manifest.c3bd95cfa965427968dd6789b870cc9f.js": "/For-PGS/precache-manifest.c3bd95cfa965427968dd6789b870cc9f.js",
+    "precache-manifest.6344423eb366de2b1c8aa6ba1f988e7f.js": "/For-PGS/precache-manifest.6344423eb366de2b1c8aa6ba1f988e7f.js",
     "service-worker.js": "/For-PGS/service-worker.js",
-    "static/css/main.289f3956.chunk.css.map": "/For-PGS/static/css/main.289f3956.chunk.css.map",
+    "static/css/main.c189828a.chunk.css.map": "/For-PGS/static/css/main.c189828a.chunk.css.map",
     "static/media/box1.png": "/For-PGS/static/media/box1.73cb5972.png",
     "static/media/box2.png": "/For-PGS/static/media/box2.8b35b123.png",
     "static/media/box3.png": "/For-PGS/static/media/box3.a79bb5a7.png"
