@@ -14,10 +14,16 @@ import "./index.css";
 import "./Root.css";
 
 class Root extends React.Component {
+  state = {
+    isModalOpen: false,
+    name: 'Dominik'
+  };
+
+
   render() {
     return (
       <BrowserRouter>
-        <AppContext.Provider>
+        <AppContext.Provider value={this.state.name}>
           <Header />
           <Switch>
             <Route

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {Fragment} from "react";
 
 import Box from '../../components/Box/Box';
 
 const AboutUsView = () => (
-    <Box/>
+    <Fragment>
+        <Box />
+    </Fragment>
+
 );
 
 export default AboutUsView;
