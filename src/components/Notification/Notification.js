@@ -2,12 +2,12 @@ import React, { Fragment } from "react";
 
 import styles from "./Notification.module.scss";
 
-const Notification = React.forwardRef((props, ref) => (
+const Notification = (props, ref) => (
   <Fragment>
-    <div ref={ref} className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className={styles.content}>{props.text}</div>
     </div>
   </Fragment>
-));
+);
 
 export default Notification;

@@ -17,32 +17,30 @@ class Root extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <AppContext.Provider>
-          <Header />
-          <Switch>
-            <Route
-              exact
-              path="/about-us"
-              component={AboutUsView}
-              title="About Us - PGS Software"
-            />
-            <Route
-              exact
-              path="/skicams"
-              component={SkicamsView}
-              title="Skicams - PGS Software"
-            />
-            <Route
-              exact
-              path="/contact"
-              component={ContactView}
-              title="Contact - PGS Software"
-            />
+        <Header />
+        <Switch>
+          <Route
+            exact
+            path="/about-us"
+            component={AboutUsView}
+            title="About Us - PGS Software"
+          />
+          <Route
+            exact
+            path="/skicams"
+            component={SkicamsView}
+            title="Skicams - PGS Software"
+          />
+          <Route
+            exact
+            path="/contact"
+            component={ContactView}
+            title="Contact - PGS Software"
+          />
 
-            <Route component={() => <Redirect to="/about-us" />} />
-          </Switch>
-          <Footer />
-        </AppContext.Provider>
+          <Route component={() => <Redirect to="/about-us" />} />
+        </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
