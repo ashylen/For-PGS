@@ -10,6 +10,7 @@ const HeaderKey = "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw";
 
 class Cam extends React.Component {
   _isMounted = false;
+  defaultCamCount = 2;
 
   constructor(props) {
     super(props);
@@ -91,7 +92,7 @@ class Cam extends React.Component {
 
         if (data[key].name === places[placesKey]) {
 
-          let placesToDisplay = Object.values(data[key].cams).slice(0, places.length);
+          let placesToDisplay = Object.values(data[key].cams).slice(0, this.defaultCamCount);
           let images = [];
 
           for (let item in placesToDisplay) {
