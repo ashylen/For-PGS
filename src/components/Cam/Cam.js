@@ -1,9 +1,9 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 
 import CamItem from "./CamItem/CamItem";
 
 import styles from "./Cam.module.scss";
-
+import imageNotFound from "../../assets/images/image-not-found.png";
 
 const API = "https://makevoid-skicams.p.mashape.com/cams.json";
 const HeaderKey = "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw";
@@ -11,13 +11,12 @@ const HeaderKey = "kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw";
 class Cam extends React.Component {
   _isMounted = false;
 
-
   constructor(props) {
     super(props);
 
     this.state = {
-      cams: ["Andalo", "Monte Bondone"],
-      data: null,
+      places: ["Andalo", "Monte Bondone" , "Alleghe", "Antagnod"], //You can add as many placesToDisplay as you want and it will automatically display it on page
+      data: null, //Data from SkiCamsAPI
       isApiConnected: false
     };
   }
@@ -78,58 +77,52 @@ class Cam extends React.Component {
 
   render() {
     const isApiConnected = this.state.isApiConnected;
-    const camsToShow = this.state.cams;
-    const camsFromData = this.state.data;
+    const places = this.state.places;
+    const data = this.state.data;
     let content;
 
-    if (isApiConnected && camsFromData) {
-      let keys = Object.keys(camsFromData);
-      let cams = [];
+    if (isApiConnected && data) {
+      let camsKeys = Object.keys(data);
+      let camsToRender = [];
+      let placesKey = 0; //To find all cams from user input (in this case: this.state.places)
 
-      for (var i = 0; i < keys.length; i++) {
-        let key = keys[i];
+      for (var i = 0; i < camsKeys.length; i++) {
+        let key = camsKeys[i];
 
-        if (camsFromData[key].name === camsToShow[0]) {
-          cams.push({
-            name: camsFromData[key].name,
-            images: [
+        if (data[key].name === places[placesKey]) {
+
+          let placesToDisplay = Object.values(data[key].cams).slice(0, places.length);
+          let images = [];
+
+          for (let item in placesToDisplay) {
+            images.push(
               <img
-                key="0"
-                src={camsFromData[key]["cams"][56]["url"]}
-                alt={camsFromData[key].name}
-              />,
-              <img
-                key="1"
-                src={camsFromData[key]["cams"][57]["url"]}
-                alt={camsFromData[key].name}
+                key={placesToDisplay[item]["name"]}
+                src={placesToDisplay[item]["url"]}
+                alt={placesToDisplay[item]["name"]}
+                onError={e => {
+                  e.target.src = imageNotFound; // Replacement image
+                }}
               />
-            ]
+            );
+          }
+
+          camsToRender.push({
+            name: data[key].name,
+            images: images
           });
+
+          placesKey++;
+          i = 0; //If we have found any cam then reset loop counter to search throught whole array again.
         }
-        if (camsFromData[key].name === camsToShow[1]) {
-          cams.push({
-            name: camsFromData[key].name,
-            images: [
-              <img
-                key="0"
-                src={camsFromData[key]["cams"][479]["url"]}
-                alt={camsFromData[key].name}
-              />,
-              <img
-                key="1"
-                src={camsFromData[key]["cams"][480]["url"]}
-                alt={camsFromData[key].name}
-              />
-            ]
-          });
-        }
+
       }
 
-      content = cams.map((cam, key) => (
+      content = camsToRender.map((place) => (
         <CamItem
-          key={cam.name}
-          heading={cam.name}
-          images={cam.images}
+          key={place.name}
+          heading={place.name}
+          images={place.images}
           date={this.getCurrentDate()}
         />
       ));
