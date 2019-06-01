@@ -12,7 +12,6 @@ $brandColor: #ff7626;
   }
 }
 
-
 .wrapper {
   animation: loader 0.5s ease;
 
@@ -24,7 +23,6 @@ $brandColor: #ff7626;
 }
 
 .item {
-
   background: #fff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -33,7 +31,7 @@ $brandColor: #ff7626;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   &Heading {
     font-size: 1.5rem;

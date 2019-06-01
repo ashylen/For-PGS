@@ -16,9 +16,8 @@ import "./Root.css";
 class Root extends React.Component {
   state = {
     isModalOpen: false,
-    name: 'Dominik'
+    name: "Dominik"
   };
-
 
   render() {
     return (
