@@ -35,6 +35,12 @@ class Contact extends React.Component {
     this.setState({
       isNotificationShown: true
     });
+
+     setTimeout(() => { //Hide notification after 2.5 seconds.
+       this.setState({
+         isNotificationShown: false
+       });
+     }, 2500);
   };
 
   hideNotification = () => {
@@ -46,15 +52,17 @@ class Contact extends React.Component {
   handleFormSubmit = e => {
     e.preventDefault();
     this.setState({ isFormSubmitClicked: true });
-    this.showNotification();
 
     if (this.validateForm()) {
-      // //Animations for Notification
+      this.showNotification();
+      this.handleClearForm(); //Clear form in background
+
+      // //Animations for Notification with usig REFs
       // const notification = this.notificationRef.current;
       // notification.style.zIndex = "2";
       // notification.style.opacity = "1";
       // setTimeout(() => { //Fade out animation
-      //   this.handleClearForm(); //Clear form in background
+
       //   notification.style.opacity = "0";
       //   setTimeout(() => { //Make inputs clickable again after fade out
       //     notification.style.zIndex = "-1";
@@ -127,7 +135,7 @@ class Contact extends React.Component {
           <div className={styles.wrapper}>
             <div className={styles.formWrapper}>
               {isNotificationShown && (
-                <Notification text="Message has been sent." />
+                <Notification text="Message has been sent." additionalClassName={this.state.isNotificationShown ? 'active': ''} />
               )}
               <form
                 className={styles.form}

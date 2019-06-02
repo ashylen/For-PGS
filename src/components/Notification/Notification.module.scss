@@ -1,7 +1,29 @@
+@keyframes fadeIn {
+  0% {
+    bottom: 300px;
+    opacity: 0;
+  }
+  30% {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  70% {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+
 .wrapper {
-  background-color: #fff;
+  background-color: #fafafa;
+  color: #ff7626;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -11,7 +33,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 3s ease;
 
   overflow: hidden;
-  transition: opacity 500ms ease-in-out;
+  // transition: height 500ms ease-in-out;
 }
